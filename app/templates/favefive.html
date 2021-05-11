@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+<h1>My all-time top 5 favorite things to grow in the garden</h1>
+<ol class="countainer">
+    {% for item in items %}
+    <li class='container'>{{ item }}</li>
+    {% endfor %}
+</ol>
+<h4>There is supposed to be a bootstrap image carousel here but its not working</h4>
+</div>
+
+<div>
+    {% include 'carousel.html' %}
+</div>
+  
+{% endblock content %}

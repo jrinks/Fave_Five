@@ -1,0 +1,69 @@
+Before you start create a directory for your project
+#deactivate your condas before you activate your flask
+1. check your python version make sure you are running python 3
+--in termal enter "python - V"
+2. create virtual environment
+--in terminal type "python -m venv kekambas_venv"
+3. activate the virtual environment by runing the activate.bat You have to activate every time you open VScode (unless you tell VScode to run it automatically)
+--in terminal enter in "kekambas_venv\Scripts\activate"
+--once the ven has been activated you'll see (kekambas_env) in your terminal. Note- to deactivate your venv, type "deactivate" into the cmd
+4. lets use pip to install flask
+--pip install flask
+Note- What is Pip? "python package manager" 
+5. so now if you run pip list in the cmd it will show new items such as Flask, itsdangerous etc. and the version numbers. Pay attention to what versions you are using when you start your project because you'll need to use those version for your applications lifetime. So if there's an automatic update and if the new vversion of the package no longer supports some aspects of your code, then it will break your code. So you need to keep track of which versions you used when you created your program. 
+6. pip freeze
+click==7.1.2
+Flask==1.1.2
+itsdangerous==1.1.0
+Jinja2==2.11.3
+MarkupSafe==1.1.1
+Werkzeug==1.0.1
+7tell python to run pip freeze and save the text file call requirements
+"pip freeze > requirements.txt"
+Note: later you could use the requirements.txt to create a new virtual environment 
+9. install a requirements file that already exists use "pip install -r requirements.txt"
+The requirements.txt is just a list of required packages and versions. So any user can grab the project's requirements.txt and use that to create their own matching venv. 
+10. import flask 
+"import flask"
+11. create an app folder that will __init__ and other stuff like routes.py
+12. inside the app folder, create a file called __init__ and paste this code into the body of that file
+"from flask import Flask
+app = Flask(__name__)
+from app import routes"
+This is telling the program to import method app from module app and to run the method app, which in this case creates a new instance of the class Flask.
+13. Create a run.py file outside of your app folder.  This will contain the following code which basically tells the program to run the __init__ which establishes an instance of Flask. 
+"from app import app"
+14.If you haven't already, beforee we run run.py lets create an environmental variable called flaskapp by typing this into your cmd "set FLASK_APP=run.py"
+#we have set an environmental variable called FLASK_APP to equal the run.py. So now we can use the words FLASK_APP to initiate run.py.
+15 Create a file called .env and populate it with the following
+"FLASK_APP=run.py
+FLASK_ENV=developement
+FLASK_DEBUG=1"
+16 Install the .env by
+"pip install python-dotenv"
+17. start flask:
+"flask run"
+18. if there's a problem and you need to see if your app variable has been created correctly type "echo FLASK_APP" and it should return "FLASK_APP"  if you've set things up correctly. 
+19. If you are still having problems make sure you set up your __init__.py correctly
+20. OK! so now you've started Flask
+Templates!
+1. now lets create some html templates 
+2. if you don't already have one, inside your app folder create a templates folder
+3. templates will consist of your base template and other page specific templates
+4. create an 
+
+
+
+
+
+#any changes you make while the flask server is on will not be displayed 
+#we could kill the server and restart it
+#but instead we want to go from production mode to dev mode
+#do this by ctl+c out of your flask server, then type into your cmd "FLASK_ENV=developement"
+
+
+
+#then flask run again and now you're in developement mod and debug on
+
+#>kekambas_venv\Scripts\activate  
+
